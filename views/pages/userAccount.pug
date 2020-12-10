@@ -1,0 +1,83 @@
+html
+	head
+		meta(charset="UTF-8")
+		title User Account
+		Style
+			include userAccountStyle.css 
+	body(onload="init()")
+		.navbar
+			nav
+				.logo User: #{userAccount.username}
+				ul.menu
+					if !userAccount.contributingUser
+						li
+							a(href="/users/contributingUser") UPGRADE TO CONTRIBUTING USER
+					else
+						li
+							form(action='/users/cancelContributingUser', method='post')
+								button#cancelContri(type='submit') CANCEL CONTRIBUTING USER
+					li.dropdown
+						button.dropbtn
+							| NOTIFICATIONS:
+						ul.dropdown-menu
+							each val in notifications
+								- let id = val._id
+								if val.content === "follow"
+									form(action="/users/notification/"+ id, method='post')
+										button#readNotification(type='submit') #{val.username} followed you
+								else if val.content === "unfollow"
+									form(action="/users/notification/"+ id, method='post')
+										button#readNotification(type='submit') #{val.username} unfollowed you
+								else if val.content === "add movie"
+									form(action="/people/notification/"+ id, method='post')
+										button#readNotification(type='submit') #{val.username} is added to a new movie
+					li.numNotification
+						| #{numNotifications}
+					li
+						a(href="/logOut") LOGOUT
+		hr(style="width: 100%; text-align: left; margin-left: 0; margin-right:0")
+		.user
+			
+		.searchBox
+			form(action='/movies/search', method='post')
+				input#search(type="text" name="searchMovie" placeholder="Search movies by Genre/Title/Year")
+				button#searchButton.button(type='submit') Search
+				br
+
+				input#genre(type="radio" name="choice" value='genre')
+				label#choice(for='genre') Genre
+				
+				input#title(type="radio" name="choice" value='title')
+				label#choice(for='movie') Title
+				
+				input#year(type="radio" name="choice" value='year')
+				label#choice(for='year') Year
+				
+				
+		if userAccount.contributingUser
+			.contribution
+				form(action='/people/addPeople', method='get')
+					button#addPeopleButton.button(type='submit') Add People
+				form(action='/movies/addMovie', method='get')
+					button#addMovieButton.button(type='submit') Add Movie
+		.leftColumn
+			h2 People You Follow
+			.peopleFollow
+				each val in userAccount.peopleFollow
+					a(href="/people?name=" + val.name) #{val.name}
+				
+		.centerColumn
+			h2 Users You Follow
+			.usersFollow
+				each val in userAccount.userFollow
+					- let id = val.id
+					a(href="/users/" + id) #{val.username}
+				
+		.rightColumn
+			h2 You Might Like
+			.mightLike
+				each val in recomMovies
+					a(href="/movies?title="+val) #{val}
+
+				
+

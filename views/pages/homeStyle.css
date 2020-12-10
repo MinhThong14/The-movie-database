@@ -1,0 +1,82 @@
+*{
+	margin: 0;
+	padding:0;
+	outline: 0;
+	box-sizing: border-box;
+}
+body{
+	background-image: url(./movie.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+	font-family: poppins;
+}
+.navbar{
+	padding-top: 20px;
+	position: relative;
+	width: (100%-80px);
+	margin: 0 auto;
+	background:	black;
+	z-index: 1;
+	text-align: right;
+	padding-right: 2%;
+}
+.logo{
+	width: 30%;
+	float: left;
+	color: silver;
+	font-size: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	padding: 10px 25px;
+}
+.menu li{
+	display: inline-block;
+	list-style-type: none;
+}
+.menu a{
+	color: silver;
+	display: block;
+	padding: 15px 25px;
+	font-size: 25px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+}
+.menu a:hover{
+	background: lightgray;
+	color: #fff;
+	border-radius: 19px;
+}
+
+#search{
+	width: 450px;
+	height: 40px;
+	padding: 5px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	border: none;
+	font-size: 18px;
+	text-align: center;
+	background-color: lightgray;
+	margin: 15px;
+}
+
+h1{
+	color: silver;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 150px;
+	font-weight: 500;
+	font-size: 40px;
+	letter-spacing: 1px;
+}
+
+hr{
+	border-top: 1px silver;
+}
+  

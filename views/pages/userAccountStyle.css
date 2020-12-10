@@ -1,0 +1,323 @@
+*{
+	margin: 0;
+	padding:0;
+	outline: 0;
+	box-sizing: border-box;
+}
+body{
+	background-image: url(./movie.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+	font-family: poppins;
+}
+.navbar{
+	padding-top: 20px;
+	position: relative;
+	width: (100%-80px);
+	margin: 0 auto;
+	background:	black;
+	z-index: 1;
+	text-align: right;
+	padding-right: 2%;
+}
+.logo{
+	width: 30%;
+	float: left;
+	color: silver;
+	font-size: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	padding: 10px 25px;
+}
+.menu li{
+	display: inline-block;
+	list-style-type: none;
+}
+.menu a{
+	color: silver;
+	display: block;
+	padding: 15px 25px;
+	font-size: 25px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+}
+.menu a:hover{
+	background: lightgray;
+	color: #fff;
+	border-radius: 19px;
+
+}
+
+.searchBox p{
+	color: white;
+	font-size: 30px;
+}
+
+.contribution{
+	margin-left: 575px;
+}
+
+.contribution form{
+	display: inline;
+}
+
+#cancelContri{
+	color: silver;
+	display: block;
+	padding: 15px 25px;
+	font-size: 25px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+	border: none;
+	background: none;
+}
+
+#cancelContri:hover{
+	background: lightgray;
+	color: #fff;
+	border-radius: 19px;	
+}
+
+#readNotification{
+	color: black;
+	display: block;
+	padding: 3px;
+	padding-left: 20px;
+	font-size: 17px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+	border: none;
+	background: none;
+}
+
+#readNotification:hover{
+	background: lightgray;
+	color: #fff;
+	padding-left: 20px;
+	position: relative;;
+		
+}
+
+
+#search{
+	width: 550px;
+	height: 50px;
+	padding: 5px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	border: none;
+	font-size: 18px;
+	text-align: center;
+	background-color: lightgray;
+	margin: 30px;
+	margin-left: 385px;
+	margin-top: 20px;
+}
+#searchButton{
+	background-color: gray;
+	border: none;
+	border-radius: 30px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 17px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+#genre{
+	margin-left: 575px;
+	margin-bottom: 20px;
+}
+#title{
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
+
+#year{
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
+
+#choice{
+	font-size: 17px;
+	text-align: center;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropbtn {
+	color: silver;
+	display: block;
+	padding: 10px;
+	font-size: 25px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+	border: none;
+	background: none;
+  }
+  
+
+  
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 250px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	text-align: left;
+}
+  
+.dropdown-menu a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	display: block;
+}
+
+.dropdown-menu a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+	border-radius: 5px;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: lightgray;
+	color: white;
+	border-radius: 19px;
+	height: 60px;
+}
+
+.numNotification {
+	color: orange;
+	display: block;
+	
+	font-size: 25px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+	border: none;
+	background: none;
+  }
+
+
+#addPeopleButton{
+	background-color: gray;
+	border: none;
+	border-radius: 30px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 17px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+#addMovieButton{
+	background-color: gray;
+	border: none;
+	border-radius: 30px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 17px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+
+h1{
+	color: silver;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 150px;
+	font-weight: 500;
+	font-size: 40px;
+	letter-spacing: 1px;
+}
+
+hr{
+	border-top: 1px silver;
+}
+
+.leftColumn, .centerColumn, .rightColumn{
+	float: left;
+	width: 32%;
+	color: white;
+	padding-top: 20px;
+	height: 500px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 9px;
+}
+.leftColumn{
+	background: #500000;
+	border: 1px solid silver;
+	border-radius: 19px;
+}
+.centerColumn{
+	background: #404040;
+	border: 1px solid silver;
+	border-radius: 19px;
+}
+.rightColumn{
+	background: #282828;
+	border: 1px solid silver;
+	border-radius: 19px;
+}
+
+.peopleFollow, .usersFollow, .mightLike{
+	width: 420px;
+	height: 415px;
+	margin: 15px 20px 20px 20px ;
+	overflow-y: auto;
+	
+}
+.peopleFollow a, .usersFollow a, .mightLike a{
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
+}
+
+.peopleFollow a:hover, .usersFollow a:hover, .mightLike a:hover{
+	background-color: #ccc;
+}
+
+.peopleFollow a.active, .usersFollow a.active, .mightLike a.active{
+	background-color: #ccc;
+}

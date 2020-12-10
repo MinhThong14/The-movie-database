@@ -1,0 +1,54 @@
+html
+	head
+		meta(charset="UTF-8")
+		title Viewing Other User
+		Style
+			include viewingOtherUsersStyle.css
+	body(onload="init()")
+		.navbar
+			nav
+				.logo User: <a href="/users/userAccount"> #{userAccount.username}
+				ul.menu
+					if !userAccount.contributingUser
+						li
+							a(href="/users/contributingUser") UPGRADE TO CONTRIBUTING USER
+					else
+						li
+							form(action='/users/cancelContributingUser', method='post')
+								button#cancelContri(type='submit') CANCEL CONTRIBUTING USER
+					li
+						a(href="/logOut") LOGOUT
+		hr(style="width: 100%; text-align: left; margin-left: 0; margin-right:0")
+		#peopleName
+			h1 #{user.username}
+
+			if !checkFollow
+				- let id = user._id
+					form(action='/users/followOtherUser/'+id, method='post')
+						button#followButton.button(type='submit') Follow
+			else
+				- let id = user._id
+					form(action='/users/unFollowOtherUser/'+id, method='post')
+						button#followButton.button(type='submit') UnFollow	
+		.leftColumn
+			.follows
+				h2 This user has followed
+				.followList
+					each val in user.peopleFollow
+						a(href="/people?name=" + val.name) #{val.name}
+						
+					
+		.rightColumn
+			.info
+				h2 Reviews
+				.reviews
+					#review1
+						each val in user.reviews
+							a(href="/movies/"+val.movieId) #{val.title}
+							div
+							p
+								| #{val.comment}
+							p
+								| Rating: #{val.rating}
+						
+

@@ -1,0 +1,44 @@
+html
+	head
+		meta(charset="UTF-8")
+		title Viewing Movie
+		Style
+			include addPeopleStyle.css
+		
+	body(onload="init()")
+		.navbar
+			nav
+				.logo User: <a href="/users/userAccount"> #{userAccount.username}
+				ul.menu
+					if !userAccount.contributingUser
+						li
+							a(href="/users/contributingUser") UPGRADE TO CONTRIBUTING USER
+					else
+						li
+							form(action='/users/cancelContributingUser', method='post')
+								button#cancelContri(type='submit') CANCEL CONTRIBUTING USER
+					li
+						a(href="/logOut") LOGOUT
+		hr(style="width: 100%; text-align: left; margin-left: 0; margin-right:0")
+		.rightColumn
+			.comments
+				h2 Add People
+				form(action='/people/addPeople' method='post')
+					p Name
+					input#score(type="text" name="name" placeholder="Name")
+					br
+					br
+					p Position
+					input#score(type="text" name="position" placeholder="Director/Actor/Writer")
+					br
+					br
+					p A Movie
+					input#score(type="text" name="movie" placeholder="A movie of this person")
+					br 
+					br
+					p Bio
+					div
+						textarea#commentBox(name="bio")
+					button#commentButton.button(type="submit") Add People
+			
+

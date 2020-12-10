@@ -1,0 +1,166 @@
+*{
+	margin: 0;
+	padding:0;
+	outline: 0;
+	box-sizing: border-box;
+}
+body{
+	background-image: url(./movie.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.navbar{
+	padding-top: 20px;
+	position: relative;
+	width: (100%-80px);
+	margin: 0 auto;
+	background:	black;
+	z-index: 1;
+	text-align: right;
+	padding-right: 2%;
+}
+.logo{
+	width: 30%;
+	float: left;
+	color: silver;
+	font-size: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	padding: 10px 25px;
+}
+.menu li{
+	display: inline-block;
+	list-style-type: none;
+}
+.menu a{
+	color: silver;
+	display: block;
+	padding: 15px 25px;
+	font-size: 25px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+}
+.menu a:hover{
+	background: lightgray;
+	color: #fff;
+	border-radius: 19px;
+}
+
+#search{
+	width: 450px;
+	height: 40px;
+	padding: 5px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	border: none;
+	font-size: 18px;
+	text-align: center;
+	background-color: lightgray;
+	margin: 15px;
+}
+
+h1{
+	color: silver;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 150px;
+	font-weight: 500;
+	font-size: 40px;
+	letter-spacing: 1px;
+}
+
+hr{
+	border-top: 1px silver;
+}
+
+.loginBoxer{
+	width: 320px;
+	height: 420px;
+	background: black;
+	color:white;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 70px;
+	border: 1px solid silver;
+}
+
+.avatar{
+	position: absolute;
+	top: -35px;
+	left: calc(55% - 50px);
+
+}
+
+h1{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.loginBoxer p{
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.loginBoxer input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.loginBoxer input[type="text"], input[type="password"]{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	font-size: 17px;
+	color: silver;
+}
+
+.loginBoxer input[type="button"]{
+	border: none;
+	outline: none;
+	height: 40px;
+	background:   #4d88ff;
+	color: #fff;
+	font-size:18px;
+	border-radius: 19px;
+}
+.loginBoxer input[type="button"]:hover{
+	cursor: pointer;
+	background: #ffc107;
+	color: #000;
+}
+
+#signUp{
+    width: 175px;
+    border: none;
+    outline: none;
+    height: 40px;
+    background:   #4d88ff;
+    color: #fff;
+    font-size:18px;
+    border-radius: 19px;
+    margin-bottom: 10px;
+}
+#signUp:hover{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+  

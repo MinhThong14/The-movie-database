@@ -1,0 +1,236 @@
+*{
+	margin: 0;
+	padding:0;
+	outline: 0;
+	box-sizing: border-box;
+}
+body{
+	background-image: url();
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+	font-family: poppins;
+}
+.navbar{
+	padding-top: 20px;
+	position: relative;
+	width: (100%-80px);
+	margin: 0 auto;
+	background:	black;
+	z-index: 1;
+	text-align: right;
+	padding-right: 2%;
+}
+
+.logo{
+	width: 30%;
+	float: left;
+	color: silver;
+	font-size: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	padding: 10px 25px;
+}
+
+.menu li{
+	display: inline-block;
+	list-style-type: none;
+}
+.menu a{
+	color: silver;
+	display: block;
+	padding: 15px 25px;
+	font-size: 25px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+}
+.menu a:hover{
+	background: lightgray;
+	color: #fff;
+	border-radius: 19px;
+
+}
+
+#readNotification{
+	color: black;
+	display: block;
+	padding: 3px;
+	padding-left: 20px;
+	font-size: 17px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+	border: none;
+	background: none;
+}
+
+#readNotification:hover{
+	background: lightgray;
+	color: #fff;
+	padding-left: 20px;
+	position: relative;;
+		
+}
+
+.dropbtn {
+	color: silver;
+	display: block;
+	padding: 10px;
+	font-size: 25px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+	border: none;
+	background: none;
+  }
+  
+
+  
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 250px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	text-align: left;
+}
+  
+.dropdown-menu a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	display: block;
+}
+
+.dropdown-menu a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+	border-radius: 5px;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: lightgray;
+	color: white;
+	border-radius: 19px;
+	height: 60px;
+}
+
+.numNotification {
+	color: orange;
+	display: block;
+	
+	font-size: 25px;
+	font-weight: 1000;
+	letter-spacing: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+	border: none;
+	background: none;
+  }
+
+
+.searchBox p{
+	color: white;
+	font-size: 30px;
+}
+
+h1{
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+hr{
+	border-top: 1px silver;
+}
+
+#peopleName{
+	margin: 30px 15px 15px 15px;
+	text-align: center;
+	
+}
+
+#movieInformation{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	line-height: 40px;
+	
+}
+
+.info{
+	text-align: center;
+	margin-top: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}
+
+
+.benefits{
+	width: 800px;
+	height: 300px;
+	margin: 15px 10px 10px 30px ;
+	margin-left: 320px;
+	padding: 50px;
+	overflow-y: auto;
+	border-radius: 20px;
+	background-color: lightgray;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	position: center;
+	text-align: left;
+	
+}
+
+#register{
+	background-color: lightgray;
+	border: none;
+	border-radius: 10px;
+	color: black;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 20px 20px 20px 20px ;;
+	cursor: pointer;
+	margin-left: 655px;
+}
+
+
+#comback{
+	background-color: lightgray;
+	border: none;
+	border-radius: 10px;
+	color: black;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 5px 20px 20px 20px ;;
+	cursor: pointer;
+	margin-left: 630px;
+}
+
+
+
+

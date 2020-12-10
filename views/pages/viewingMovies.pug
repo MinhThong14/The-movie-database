@@ -1,0 +1,104 @@
+html
+	head
+		meta(charset="UTF-8")
+		title Viewing Movie
+		Style
+			include viewingMoivesStyle.css 
+		
+	body(onload="init()")
+		.navbar
+			nav
+				.logo User: <a href="/users/userAccount"> #{userAccount.username}
+				ul.menu
+					if !userAccount.contributingUser
+						li
+							a(href="/users/contributingUser") UPGRADE TO CONTRIBUTING USER
+					else
+						li
+							form(action='/users/cancelContributingUser', method='post')
+								button#cancelContri(type='submit') CANCEL CONTRIBUTING USER
+					li
+						a(href="/logOut") LOGOUT
+		hr(style="width: 100%; text-align: left; margin-left: 0; margin-right:0")
+		#filmName
+			h2 #{movie.title}
+		#movieInformation
+			h3 Movie Information
+			p#releaseDate Release Date: #{movie.year}
+			p#aveRating Average Rating: #{averageRating}/10
+			p#runTime Run time: #{movie.runtime}
+			p#plot
+				| Plot: #{movie.plot}
+			p#director Director: 
+				if userAccount.contributingUser
+					p Add a director
+					form(action='/movies/'+movie.id+'/addDirector' method='post')
+						input#score(type="text" name="name" placeholder="Name")
+						br
+						br
+						button#commentButton.button(type="submit") Add Director
+				br
+				each val in movie.director
+					a(href="/people?name="+val) #{val}
+					br
+			p#writer
+				| Writers:
+				if userAccount.contributingUser
+					p Add a writer
+					form(action='/movies/'+movie.id+'/addWriter' method='post')
+						input#score(type="text" name="name" placeholder="Name")
+						br
+						br
+						button#commentButton.button(type="submit") Add Writer
+				br
+				each val in movie.writer
+					a(href="/people?name="+val) #{val}
+					br
+			p#actors
+				| Actors:
+				
+				if userAccount.contributingUser
+					p Add an Actor
+					form(action='/movies/'+movie.id+'/addActor' method='post')
+						input#score(type="text" name="name" placeholder="Name")
+						br
+						br
+						button#commentButton.button(type="submit") Add Actor
+				br
+				each val in movie.actor
+					a(href="/people?name="+val) #{val}
+					br 
+		.leftColumn
+			.review
+				h2 Reviews
+				br
+				.movieReviews
+					each val in movie.reviews
+							if (val.username === userAccount.username)
+								a(href="/users/userAccount") #{val.username}
+							else
+								- let id = val.userId
+								a(href="/users/" + id) #{val.username}
+							div
+							p
+								| #{val.comment}
+							p
+								| Rating: #{val.rating}
+		.rightColumn
+			.comments
+				h2 Comments
+				- let id = movie.id
+				form(action='/movies/'+id method='post')
+					input#score(type="text" name="rating" placeholder="Rate Score out of 10")
+					div
+						textarea#commentBox(name="comments")
+					button#commentButton.button(type="submit") Add Reviews
+			.recomendation
+				h2 You may also like
+				.mightLike
+					each val in recomMovies
+						if (val != movie.title)
+							a(href="/movies?title="+val) #{val}
+
+
+

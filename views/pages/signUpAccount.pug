@@ -1,0 +1,28 @@
+html
+	head
+		meta(charset="UTF-8")
+		title Sign Up
+		Style
+			include signUpAccountStyle.css
+	body(onload="init()")
+		.navbar
+			nav
+				ul.menu
+					li
+						a(href="/") HOME
+					li
+						a(href="/signInAccount") SIGN IN
+		hr(style="width: 100%; text-align: left; margin-left: 0; margin-right:0")
+		.loginBoxer
+			img.avatar(src="login_icon.png")
+			h1 Sign Up Here
+			form(action='/signUpAccount' method='post')
+				p Username
+				input#addUsername(type="text" name="addUsername" placeholder="Enter Username")
+				p Password
+				input#addPassword(type="password" name="addPassword" placeholder="Enter Password")
+				p Confirm Password
+				input#confirmPassword(type="password" name="confirmPassword" placeholder="Confirm Password")
+				button#signUp(type="submit") Sign Up
+		script(src="signUp.js")
+

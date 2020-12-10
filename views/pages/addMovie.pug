@@ -1,0 +1,61 @@
+html
+	head
+		meta(charset="UTF-8")
+		title Viewing Movie
+		Style
+			include addMovieStyle.css
+		
+	body(onload="init()")
+		.navbar
+			nav
+				.logo User: <a href="/users/userAccount"> #{userAccount.username}
+				ul.menu
+					if !userAccount.contributingUser
+						li
+							a(href="/users/contributingUser") UPGRADE TO CONTRIBUTING USER
+					else
+						li
+							form(action='/users/cancelContributingUser', method='post')
+								button#cancelContri(type='submit') CANCEL CONTRIBUTING USER
+					
+					li
+						a(href="/logOut") LOGOUT
+		hr(style="width: 100%; text-align: left; margin-left: 0; margin-right:0")
+		.rightColumn
+			.comments
+				h2 Add Movie
+				form(action='/movies/addMovie' method='post')
+					p Title
+					input#score(type="text" name="title" placeholder="Title")
+					br
+					br
+					p Year
+					input#score(type="text" name="year" placeholder="Year")
+					br
+					br
+					p Runtime
+					input#score(type="text" name="runtime" placeholder="Runtime")
+					br
+					br
+					p Plot
+					input#score(type="text" name="plot" placeholder="Plot")
+					br
+					br
+					p Genre
+					input#score(type="text" name="genre" placeholder="Genre")
+					br
+					br
+					p Director
+					input#score(type="text" name="director" placeholder="Director")
+					br
+					br
+					p Actor
+					input#score(type="text" name="actor" placeholder="Actor")
+					br
+					br
+					p Writer
+					input#score(type="text" name="writer" placeholder="Writer")
+					br
+					br
+					button#commentButton.button(type="submit") Add Movie
+

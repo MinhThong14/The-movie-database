@@ -1,0 +1,44 @@
+html
+	head
+		meta(charset="UTF-8")
+		title Search
+		Style
+			include searchStyle.css
+	body(onload="init()")
+		.navbar
+			nav
+				.logo User: <a href="/users/userAccount"> #{userAccount.username}
+				ul.menu
+					if !userAccount.contributingUser
+						li
+							a(href="/users/contributingUser") UPGRADE TO CONTRIBUTING USER
+					else
+						li
+							form(action='/users/cancelContributingUser', method='post')
+								button#cancelContri(type='submit') CANCEL CONTRIBUTING USER
+					li
+						a(href="/logOut") LOGOUT
+		hr(style="width: 100%; text-align: left; margin-left: 0; margin-right:0")
+		.user
+		.searchBox
+			form(action='/movies/search', method='post')
+				input#search(type="text" name="searchMovie" placeholder="Search movies by Genre/Title/Year")
+				button#searchButton.button(type='submit') Search
+				br
+
+				input#genre(type="radio" name="choice" value='genre')
+				label#choice(for='genre') Genre
+				
+				input#title(type="radio" name="choice" value='title')
+				label#choice(for='movie') Title
+				
+				input#year(type="radio" name="choice" value='year')
+				label#choice(for='year') Year
+		.search
+			h2 Search Result
+			.searchResult
+				if movie
+					each val in movie
+						a(href="/movies/"+val._id) #{val.title}
+				
+

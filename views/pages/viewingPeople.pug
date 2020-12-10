@@ -1,0 +1,56 @@
+html
+	head
+		meta(charset="UTF-8")
+		title Viewing People
+		Style
+			include viewingPeopleStyle.css
+	body(onload="init()")
+		.navbar
+			nav
+				.logo User: <a href="/users/userAccount"> #{userAccount.username}
+				ul.menu
+					if !userAccount.contributingUser
+						li
+							a(href="/users/contributingUser") UPGRADE TO CONTRIBUTING USER
+					else
+						li
+							form(action='/users/cancelContributingUser', method='post')
+								button#cancelContri(type='submit') CANCEL CONTRIBUTING USER
+					li
+						a(href="/logOut") LOGOUT
+		hr(style="width: 100%; text-align: left; margin-left: 0; margin-right:0")
+		#peopleName
+			h1 #{people.name}
+			
+			if !checkFollow
+				- let id = people._id
+				form(action='/users/followAPerson/'+id, method='post')
+					button#followButton.button(type='submit') Follow
+			else
+				- let id = people._id
+				form(action='/users/unFollowAPerson/'+id, method='post')
+					button#followButton.button(type='submit') UnFollow
+
+		.leftColumn
+			.movies
+				h2 Movies
+				.moviesList
+					each val in people.movies
+						a(href="/movies?title="+val) #{val}
+
+			.collaborator
+				h2 Top Collaborators 
+				.collaboratorsList
+					each val in topCollaboration
+						a(href="/movies?title="+val) #{val}
+						
+					
+		.rightColumn
+			.info
+				h2 Bio 
+				.infomationBox
+					p #{people.bio}
+					
+					
+					
+

@@ -1,0 +1,42 @@
+html
+	head
+		meta(charset="UTF-8")
+		title Contributing User
+		Style
+			include contributingUserStyle.css 
+	body(onload="init()")
+		.navbar
+			nav
+				.logo User: <a href="/users/userAccount"> #{userAccount.username}
+				ul.menu
+					if !userAccount.contributingUser
+						li
+							a(href="/users/contributingUser") UPGRADE TO CONTRIBUTING USER
+					else
+						li
+							form(action='/users/cancelContributingUser', method='post')
+								button#cancelContri(type='submit') CANCEL CONTRIBUTING USER
+					li
+						a(href="/logOut") LOGOUT
+		hr(style="width: 100%; text-align: left; margin-left: 0; margin-right:0")
+		.info
+			h2 Benefits of Contributing User
+			.benefits
+				ul
+					li
+						p
+							| Add a new person to the database by specifying their name. If the name already exists, the user should not be able to add the new person.
+					br
+					li
+						p
+							| Add a new movie by specifying all of the minimum information requried by your system, including at least one writer, director, and actor. The user should only be allowed to add people to a movie if that person exists in the database already. You can include an 'auto-fill' feature to generae a random movie quickly but must also provide a way for the user to manually create a movie entry.
+					br
+					li
+						p
+							| When viewing a movie, be able to edit the movie by adding actors, writers, and/or directors.
+		.button
+			form(action='/users/contributingUser', method='post')
+				button#register.button(type='submit') Register
+			a(href="/users/userAccount")
+				button#comback.button No, I don't want!
+
